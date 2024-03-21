@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Animação "Eu te amo"</title>
+<style>
+  body {
+    background-color: #ff8c94; /* rosa */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: 'Lobster', cursive;
+  }
+
+  @keyframes pulse {
+    0% {
+      transform: scale(1);
+      color: #ff3855; /* vermelho */
+    }
+    50% {
+      transform: scale(1.1);
+      color: #ff8c94; /* rosa */
+    }
+    100% {
+      transform: scale(1);
+      color: #ff3855; /* vermelho */
+    }
+  }
+  
+  .animation {
+    font-size: 30px;
+    animation: pulse 2s infinite;
+    display: none;
+  }
+
+  #showAnimationBtn {
+    padding: 10px 20px;
+    background-color: #ff3855; /* vermelho */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+  }
+
+  #showAnimationBtn:hover {
+    background-color: #ff6381; /* vermelho mais claro */
+  }
+</style>
+<link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+</head>
+<body>
+<button id="showAnimationBtn">Mostrar Animação</button>
+<div class="animation" id="animation">
+  Eu te amo
+</div>
+
+<script>
+  document.getElementById('showAnimationBtn').addEventListener('click', function() {
+    var animation = document.getElementById('animation');
+    animation.style.display = 'block';
+    this.style.display = 'none';
+  });
+</script>
+</body>
+</html>
